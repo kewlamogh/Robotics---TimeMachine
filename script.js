@@ -1,4 +1,9 @@
 function start() {
     let e = document.getElementById("date").value
-    window.location.href = "timemachine.html?date=" + e.substring(0, e.length - 2) + "00"
+
+    if (parseInt(e) > 3000 || parseInt(e) < 1000) {   
+        return
+    }
+
+    window.location.href = "timemachine.html?date=" + e.substring(0, e.length - 3) + "000"
 }
